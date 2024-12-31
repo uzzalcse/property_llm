@@ -1,0 +1,16 @@
+
+services:
+  web:
+    build: .
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - DATABASE_URL=postgresql://postgres:postgres@postgres_container_trip_scraper:5432/trip_scraper
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+    networks:
+      - trip_scraper_default  # Use the existing network name
+    command: python manage.py runserver 0.0.0.0:8000
+
+networks:
+  trip_scraper_default:  # Reference the existing network
+    external: true       # Specify that this is an external network
