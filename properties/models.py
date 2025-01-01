@@ -13,6 +13,7 @@ class Property(models.Model):
     
     class Meta:
         db_table = 'hotels'
+        managed = False
 
 class PropertySummary(models.Model):
     property = models.ForeignKey(Property, on_delete=models.CASCADE)
