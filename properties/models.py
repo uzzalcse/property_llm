@@ -16,6 +16,7 @@ class Property(models.Model):
         managed = False
 
 class PropertySummary(models.Model):
+    id = models.IntegerField(primary_key=True)  # Explicitly define id
     property = models.ForeignKey(Property, on_delete=models.CASCADE)
     summary = models.TextField()
     
@@ -23,6 +24,7 @@ class PropertySummary(models.Model):
         db_table = 'property_summaries'
 
 class PropertyReview(models.Model):
+    id = models.IntegerField(primary_key=True)  # Explicitly define id
     property = models.ForeignKey(Property, on_delete=models.CASCADE)
     rating = models.FloatField()
     review = models.TextField()
