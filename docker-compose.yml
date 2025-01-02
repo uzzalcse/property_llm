@@ -1,6 +1,7 @@
 
 services:
   web:
+    container_name: property_llm-web-1
     build: .
     volumes:
       - .:/usr/src/app
