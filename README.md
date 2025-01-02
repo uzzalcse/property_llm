@@ -71,7 +71,7 @@ docker-compose up --build -d
 
 4. Run migrations:
 ```bash
-docker-compose exec property_llm-web-1 python manage.py migrate
+docker exec property_llm-web-1 python manage.py migrate
 ```
 
 ## Usage
@@ -81,11 +81,12 @@ docker-compose exec property_llm-web-1 python manage.py migrate
 Run the management command in the Docker container to process property descriptions:
 
 ```bash
-docker-compose exec property_llm-web-1 python manage.py rewrite_properties
+docker exec -it property_llm-web-1  /bin/bash 
+python manage.py rewrite_properties
 ```
 
 ### To see the results
- you have to go to pgadmin of the scrappy project and login with proper credentials. Then see
+Please  go to pgadmin of the scrappy project and login with proper credentials. Then see the results.
 
 This command will:
 1. Read existing property titles and descriptions
