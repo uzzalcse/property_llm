@@ -78,11 +78,25 @@ docker exec property_llm-web-1 python manage.py migrate
 
 ### Rewrite Property Descriptions
 
-Run the management command in the Docker container to process property descriptions:
-
+Run the management command in the Docker container to process property descriptions:  
+Open the bash promt:
 ```bash
 docker exec -it property_llm-web-1  /bin/bash 
+```
+
+Run the following commands to rewrite properties
+
+```
 python manage.py rewrite_properties
+```
+
+To exit from bash type `exit` or `Ctrl+D`
+
+Stop the project 
+
+```
+docker-compose down
+
 ```
 
 ### To see the results
