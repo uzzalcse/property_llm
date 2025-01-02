@@ -86,7 +86,8 @@ python manage.py rewrite_properties
 ```
 
 ### To see the results
-Please  go to pgadmin of the scrappy project and login with proper credentials. Then see the results.
+Please  go to pgadmin of the scrappy project and login with proper credentials. Then see the results. Visit the following link to if you didn't opened in scrapy project 
+Link: http://localhost:8080/
 
 This command will:
 1. Read existing property titles and descriptions
